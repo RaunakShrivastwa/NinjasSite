@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="https://agi.skeds.in/wp-content/uploads/2018/02/service-nine.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        @media only screen and (max-width: 500px) {
+            .mark {
+                display: none !important;
+            }
+
+            .title {
+                font-size: medium;
+
+            }
+
+            .box {
+                margin-top: -5px !important;
+            }
+
+            .for {
+                margin-top: -1px !important;
+            }
+        }
+
+        @media only screen and (max-width: 770px) {
+            .vd {
+                margin-top: 10px;
+                height: auto !important;
+            }
+
+            .data {
+                display: none;
+            }
+
+            .big-head {
+                margin-top: 20px;
+                display: block !important;
+            }
+
+            .last {
+                display: none !important;
+            }
+
+            .hed {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body >
+    <div class="container-fluid m-0 p-0" style="background-color: black;">
+        <!-- course heading 1 -->
+        <div class="container p-3 big-head" style="height:auto;display: none;
+                border-radius: 5px;">
+            <img style="border-radius: 50%; width: 70px;" class="mt-3"
+                src="https://th.bing.com/th/id/OIP.pe_zC73lgoelUmh2Knel1wAAAA?pid=ImgDet&w=150&h=150&c=7&dpr=1.3"
+                alt=""> <span class="ml-2 p-3" style="color: #edb10d;">Total
+                MileStone:
+                15</span>
+            <div class="text-center p-2 con" style="margin-top: -40px;" th:each="link:${link} ">
+                <h3 class="text-white mt-0"><span th:text="${link.courseName}"></h3>
+                <p class="text-white-50">
+                    <span th:text="${link.information}"></span>
+                    <a href="">visit</a>
+                </p>
+
+                <!-- lab section -->
+                <div th:each="data:${data}" class="justify-content-around align-items-center text-center col">
+                    <p th:if="${link.courseName == data.courseName}">
+                        <a href="/lab" style="text-decoration: none; color: #edb10d;">
+                            <img width="60px"
+                                src="https://www.pgcc.edu/media/wwwpgccedu/content-assets/community/innohub/CodingLab.png"
+                                alt=""><br> CODING LAB
+
+                        </a>
+
+
+                    </p>
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <!-- course Heading2 -->
+        <div style="display: flex; flex-direction: row;">
+            <!-- left heading -->
+            <div class=" col-md-4 justify-content-around align-items-center" th:each="link:${link}" style="box-shadow: 1px
+                    0px 8px 0px
+                    rgb(110, 106,
+                    106);background-color: #453f69;border-radius: 5px; display:
+                    flex;flex-direction: row;">
+                <a href="/javaContent1" style="text-decoration: none;">
+                    <div style="display: flex; flex-direction: row; "
+                        class="justify-content-around align-items-center d-flex">
+                        <div style="display: flex; flex-direction:
+                                row;background-color:
+                                aliceblue;height:45px;border-radius:10px; width:
+                                80px;color: black;" class=" font-weight-bold
+                                d-flex box justify-content-around align-items-center">
+
+                            <img width="14px"
+                                src="https://classroom.codingninjas.com/assets-app/images/topics-exit1.svg"
+                                alt="">Topics
+
+                        </div>
+                    </div>
+
+                </a>
+                <div class="d-flex justify-content-around ml-3 align-items-center text-center"
+                    style="width: 100%; background-color: #2a2747;">
+                    <h5 class="p-1 text-white"><span style="font-size: large;" class="title font-weight-bold" th:text="${link.content}"></span>
+                        <br>
+                        <span style="font-size: small;" class="mt-2 title">Lecture :-</span> <span style="font-size: small;" th:text="${topic.id}"></span>
+                    </h5>
+                </div>
+            </div>
+
+            <!-- right heading -->
+            <div class=" align-items-center d-flex hed
+                    justify-content-around rounded ml-3" style="width:
+                    100%;background-color: #343152; height: 80px;">
+                <nav class="navbar navbar-expand-lg d-flex justify-content-around align-items-center
+                        sticky-top" style="background-color: #343152;">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    </button>
+
+                    <div class="collapse navbar-collapse" s id="navbarSupportedContent">
+                        <ul class="navbar-nav" style="justify-content: space-between; display: flex;">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/lab">
+                                    <button class=" btn btn-primary"
+                                        style="background-color: #453f69 !important; border: 0;">
+                                        <h5 class="text-center font-weight-light">Ask/Dought?</h5>
+                                    </button>
+                                </a>
+                            </li>
+                            <li class="nav-item ml-2">
+                                <a class="nav-link" href="/help">
+                                    <button class=" btn btn-primary"
+                                        style="background-color: #453f69 !important; border: 0;">
+                                        <h5 class="text-center font-weight-light px-3">Help/Hints</h5>
+                                    </button>
+                                </a>
+                            </li>
+                            <li class="nav-item ml-2">
+                                <a class="nav-link" href="/lab">
+                                    <button class=" btn btn-primary"
+                                        style="background-color: #453f69 !important;border: 0;">
+                                        <h5 class="text-center font-weight-light">CodeLab</h5>
+                                    </button>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </nav>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-12 row p-0 m-0">
+            <div class="col-md-4 col-sm-12 mt-4 overflow-auto con-data data" style="height:
+                    640px;background-color: white;">
+
+                <!-- course Data -->
+                <table class="table table-striped table-bordered" style="background:black;">
+
+                    <tbody style="height:auto;">
+                        <tr th:each="user:${userList}" class="font-weight-bold mt-5 p-5" style="background-color: white;box-shadow: 1px
+                                0px 8px 0px
+                                rgb(110, 106,
+                                106);">
+
+                            <div  class="container" style="box-shadow: 1px
+                                    0px 8px 0px
+                                    rgb(110, 106,
+                                    106); border-radius: 5px; border: 20px solid
+                                    #453f69;border-right:
+                                    0;border-top: 0;border-bottom:
+                                    0;border-left:30; background-color: white;">
+                                <div  class="col-md-12 col-sm-12 text-center
+                                        row p-2 mt-4
+                                        align-items-center
+                                        justify-content-around d-flex">
+                                    <div class="col-md-6 col-sm-12" >
+
+                                        <p class="heading " style="font-size:20px;"><a style="color: black;
+                                            text-decoration: none;" title="Computer fundame"
+                                        th:href="@{/dash/{userId}(userId=${user.id})}">
+                                        <p th:if="${user.id != topic.id}">
+                                            <img width="16px"
+                                                src="data:image/svg+xml,%3Csvg%20fill%3D%22%23000000%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M8%205v14l11-7z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E"
+                                                alt="">
+                                            <span style="font-size: larger;" th:text="${user.subTopic}">
+                                            </span>
+                                        </p>
+
+                                        <p th:if="${user.id == topic.id}">
+                                            <img width="16px"
+                                                src="data:image/svg+xml,%3Csvg%20fill%3D%22%23000000%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M6%2019h4V5H6v14zm8-14v14h4V5h-4z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E"
+                                                alt="">
+                                            <span th:text="${user.subTopic}"
+                                                style="color: rgb(98, 255, 0);font-size: larger;">
+                                            </span>
+                                        </p>
+
+
+                                    </a>
+                                </p>
+                                        <!-- <p class="heading " style="font-size:20px;"><a style="color: black;
+                                                    text-decoration: none;" title="Computer fundame"
+                                                th:href="@{/dash/{userId}(userId=${user.id})}">
+                                                <span th:text="${user.subTopic}"
+                                                style="color: rgb(98, 255, 0);font-size: larger;">
+                                            </span> -->
+                                                <!-- <p th:if="${user.id != link.id}">
+                                                    <img width="16px"
+                                                        src="data:image/svg+xml,%3Csvg%20fill%3D%22%23000000%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M8%205v14l11-7z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E"
+                                                        alt="">
+                                                    <span style="font-size: larger;" th:text="${user.content}">
+                                                    </span>
+                                                </p>
+
+                                                <p th:if="${user.id == link.id}">
+                                                    <img width="16px"
+                                                        src="data:image/svg+xml,%3Csvg%20fill%3D%22%23000000%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M6%2019h4V5H6v14zm8-14v14h4V5h-4z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E"
+                                                        alt="">
+                                                   
+                                                </p> -->
+
+
+                                            </a>
+                                        </p>
+
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <small class="deadline" style="color: #ed0d0d;font-size: small">DeadLine:
+                                            <span th:text="${user.deadLine}">
+                                            </span></small>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+            <!-- vdo -->
+            <div class="col-md-8 col-sm-12 vd align-items-center d-flex
+                    flex-column mt-4" style="height: 670px;
+                    width: 100%;">
+                <table>
+                    <tbody>
+                        <tr th:each="topic:${topic}">
+                            <div class="embed-responsive
+                                    embed-responsive-16by9">
+
+                                    <video controls type="video/mp4">
+                                        <source th:src="@{${topic.video}}"/>
+                                    </video>
+
+                                <iframe class="embed-responsive-item p-1
+                                        vdo" style="height: 100%" th:src="@{${topic.video}}" allowfullscreen></iframe>
+                            </div>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- forward button -->
+                <div class="row align-items-center mt-4 align-items-center
+                        justify-content-around rounded p-3 for" style="width:
+                        100%; background-color: #2a2747; height: auto;">
+                    <a th:href="@{/Decr/{userId1}(userId1=${topic.id})}" style="text-decoration: none;">
+                        <div class="row">
+                            <img src="https://classroom.codingninjas.com/assets-app/images/arrow-left.png" alt="">
+                            <h6 class="text-white ml-1 mt-1">previous</h6>
+                        </div>
+                    </a>
+
+                    <button class="btn btn-danger mark"><small>MARK AS WATCHED</small></button>
+
+                    <a th:href="@{/Incr/{userId2}(userId2=${topic.id})}">
+                        <div class="row ml-4">
+                            <img src="https://classroom.codingninjas.com/assets-app/images/arrow-right.png" alt="">
+                            <h6 class="text-white ml-1 mt-1">next</h6>
+                        </div>
+                    </a>
+                </div>
+                <marquee behavior="" direction="" style="color:
+                #ed200d;">
+                    Course DeadLine(Expires) soon so complete it fast
+                    <img style="width: 20px;"
+                        src="https://th.bing.com/th/id/R.f6636b6a611dbce73b8020d2ad855570?rik=sq%2frHCdJfOha7w&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2ftransparent-clock-gif%2ftransparent-clock-gif-9.png&ehk=ofPDAxxqa7PzRsMtYczgr3aEy032DOWsc6zsJJKsxv4%3d&risl=&pid=ImgRaw&r=0"
+                        alt="">under 6sep 2023
+                </marquee>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Abhijeet Payment</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="card my-5">
+            <div class="card-body">
+                <h2 class="text-center mb-4" style="color: #5A4BDA;">Make Payment</h2>
+
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <div class="card my-2">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Course Name and Details</th>
+                                        <th scope="col">Unit Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="width: 100%;">
+                                        <td scope="row" style="width: 85%;">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <img src="https://cdn.pwskills.com/assets/uploads/thumbnails/63a2ecf58899439c8d7ebdc6.jpg"
+                                                        alt="" class="w-100">
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <h5>Full Stack web development</h5>
+                                                    <p>Learn complete web stack programming with React and Node by doing it the way a full-stack</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td style="font-size: large; width: 85%;"><span>&#X20B9;</span> 3500</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card px-3 py-4 border-0 my-2" style="background-color: #F1EFFF; border-radius: 10px;">
+                            <div class="text-dark font-weight-bold border border-2 border-top-0 border-left-0 border-right-0 px-2 pb-2"
+                                style="font-size: large; border-color: #B7B7B7;">Bill Summary</div>
+
+                            <table class="table" style="letter-spacing: 1px;">
+                                <tr class="border-0">
+                                    <td scope="row" class="border-0">Price</td>
+                                    <td class="border-0"><span>&#X20B9;</span>3500</td>
+                                </tr>
+                                <tr class="border-0">
+                                    <td scope="row" class="border-0">Discount</td>
+                                    <td class="border-0"><span>&#X20B9;</span>0</td>
+                                </tr>
+                                <tr class="border-0">
+                                    <th scope="row" class="border-0">Total</th>
+                                    <th class="border-0">&#X20B9; <input type="text" id="amount" value="3500" readonly class="w-50 bg-transparent border-0" style="outline: none;"></th>
+                                </tr>
+                            </table>
+
+                            <input type="text" placeholder="Apply Coupons" class="p-2 border-0"
+                                style="border-radius: 5px;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center mt-5">
+                    <a onclick="paymentStart()" class="btn btn-primary px-3 text-white"
+                        style="background-color: #5A4BDA; font-weight: 500; letter-spacing: 1px;">Proceed to
+                        checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Payment.js"></script>
+</body>
+
+</html>

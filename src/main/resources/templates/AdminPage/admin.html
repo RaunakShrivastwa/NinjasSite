@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+            initial-scale=1.0,
+            maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>http://localhost:9096/home</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/609/609803.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function App() {
+            $(document).ready(function () {
+                $('.toast1').toast('show');
+            });
+        }
+    </script>
+    <style>
+        p {
+            animation-duration: 3s;
+            animation-name: slidein;
+        }
+
+        @keyframes slidein {
+            from {
+                margin-left: 100%;
+                width: 100%;
+            }
+
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+
+        body {
+           background:url(https://wallpapercave.com/wp/wp2508312.jpg);
+            animation: chbg 15s infinite alternate;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+
+
+        }
+
+        @keyframes chbg {
+
+            20% {
+                background: url(https://wallpapercave.com/wp/wp2508312.jpg);
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+            }
+
+            100% {
+                background: url(https://wallpapercave.com/wp/wp2508312.jpg);
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+            }
+        }
+
+
+
+        .guaranteed {
+            width: 250px;
+            background: linear-gradient(90deg, #1179EF 0%, rgba(17, 121, 239, 0.0001) 98.24%);
+            color: black;
+        }
+
+
+        .img {
+            width: 80%;
+
+
+        }
+
+        .img-b {
+            opacity: 0.5;
+        }
+
+        .img-b:hover {
+            opacity: 1.0;
+        }
+
+
+
+
+        .carousel-caption {
+            color: black;
+            /* z-index: 1; */
+            /* font-size: 1.2em;
+            margin-top:10px;
+            color: black; */
+        }
+
+        .com1 {
+            color: #393185;
+            font-size: medium;
+        }
+
+        .a1:hover {
+            background-color: #000000;
+            color: wheat;
+            box-shadow: 1px 0px 8px 0px rgb(110, 106, 106);
+            font-size: larger;
+            text-align: center;
+
+        }
+
+        @media only screen and (max-width: 990px) and (min-width: 770px) {
+            .t-text {
+                font-size: x-small;
+            }
+        }
+
+        @media only screen and (max-width: 575px) {
+
+            .img-1 {
+                border: 2px salmon;
+            }
+
+        }
+
+        @media only screen and (max-width: 770px) {
+            .d-con {
+
+                height: 70rem !important;
+            }
+
+            .vis {
+                display: none;
+            }
+
+            .t-text {
+                font-size: 18px;
+                text-align: center;
+                margin-top: 30px;
+
+            }
+
+            .guaranteed {
+                margin-top: 30px;
+            }
+
+            .p-font {
+                font-size: 20px;
+                color: red;
+            }
+
+            .logo {
+                margin-top: 40px;
+
+            }
+
+            .heading {
+                font-size: 25px;
+
+            }
+
+            .bca {
+                font-size: 25px;
+            }
+
+            .hg {
+                color: #393185;
+                font-size: 15px;
+            }
+
+            .img-1 {
+                margin-top: 30px;
+                margin-right: 0px;
+            }
+
+            .hed {
+                align-items: center;
+                display: flex;
+                justify-content: space-around;
+                font-size: medium
+            }
+
+            .com {
+                margin-top: 20px;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow sticky-top position-sticky "
+        style="background-color: #141b29 !important">
+
+        <a class="navbar-brand" href="#">
+            <img width="20px" src="https://www.cuchd.in/loader.gif" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item active">
+                    <a style="color:white !important;" class="nav-link text-primary" href="/home">Home <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a style="color:white !important;" class="nav-link " href="/register">Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color:white !important;" class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a style="color:white !important;" class="nav-link dropdown-toggle" href="#" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        Employee
+                    </a>
+                    <div class="dropdown-menu justify-content-around align-items-center text-center"
+                        style="background-color: whitesmoke;">
+                        <a class="dropdown-item a1" href="/teacher">Teacher</a>
+                        <a class="dropdown-item a1" href="/student">Student</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/staff">Staff/Faculty</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a style="color:white !important;" class="nav-link dropdown-toggle" href="#" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        Course
+                    </a>
+                    <div class="dropdown-menu justify-content-around align-items-center text-center"
+                        style="background-color: whitesmoke;">
+                        <a class="dropdown-item a1" href="/bca">BCA</a>
+                        <a class="dropdown-item a1" href="/mca">MCA</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/certificate">Certificates</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a style="color:white !important;" class="nav-link dropdown-toggle" href="#" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        Programm
+                    </a>
+                    <div class="dropdown-menu  justify-content-arround align-items-center" style="background: rgb(2,0,36);
+                    background-color: whitesmoke;">
+                        <div style="width: 300px;overflow: hidden;">
+                            <a class="dropdown-item a1 text-center" href="/java">
+                                <p style="font-size: large;">java</p>
+                            </a>
+                            <a class="dropdown-item a1 text-center" style="font-size: large;" href="/c">
+                                <p style="font-size: large;">c</p>
+                            </a>
+                            <a class="dropdown-item a1 text-center" style="font-size: large;" href="/c++">
+                                <p style="font-size: large;">c++</p>
+                            </a>
+                            <a class="dropdown-item a1 text-center" style="font-size: large;" href="/web">
+                                <p style="font-size: large;">web fullStack</p>
+                            </a>
+                            <a class="dropdown-item a1 text-center" style="font-size: large;" href="/javaBackend">
+                                <p style="font-size: large;">Backend with java</p>
+                            </a>
+                            <a class="dropdown-item a1 text-center" style="font-size: large;" href="/dsa">
+                                <p style="font-size: large;">DSA through Java</p>
+                            </a>
+                            <a class="dropdown-item a1 text-center" style="font-size: large;" href="/resume">
+                                <p style="font-size: large;">resume Building</p>
+                            </a>
+                            <a class="dropdown-item a1 text-center" style="font-size: large;" href="/dataScience">
+                                <p style="font-size: large;">data science</p>
+                            </a>
+
+                        </div>
+
+
+
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item a1 text-center" style="font-size: large;"
+                            href="/staff">Staff/Faculty</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a style="color:white !important;" class="nav-link dropdown-toggle" href="#" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        Update
+                    </a>
+                    <div class="dropdown-menu justify-content-around align-items-center text-center"
+                        style="background-color: whitesmoke;">
+                        <a class="dropdown-item a1" href="/update">Update Student</a>
+                        <a class="dropdown-item a1" href="/delete">Delete Student</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/view">View</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input id="program" style="background-color:  #141b29; border-color: #f8efef;"
+                            class="form-control mr-sm-2 text-white" type="search" placeholder="Search Programm"
+                            aria-label="Search">
+                        <button style="border-color: #f8efef !important;"
+                            class="btn btn-outline-primary font-weight-lighter text-white my-2 my-sm-0 mr-sm-2"
+                            onclick="Programm()" type="button">Search</button>
+
+
+                    </form>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="/loginPage" method="get">
+                <div th:if="${log=='anonymousUser'}">
+                    <button style="border-color: #f8efef !important;"
+                        class="btn btn-outline-primary font-weight-lighter text-white my-2 my-sm-0 mr-sm-2"
+                        type="submit">Login</button>
+                </div>
+
+
+                <div th:each="user:${user}" data-target="#staticBackdrop" data-toggle="modal">
+                    <img style="border-radius: 60%;width: 40px;" th:src="*{'data:image/jpeg;base64,'+{user.image}}"
+                        alt="">
+
+                </div>
+
+
+            </form>
+
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div th:each="user:${user}" class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: #141b29 !important;">
+                <div class="modal-header" style="border-color: #141b29;">
+                    <h5 class="modal-title text-white" id="staticBackdropLabel">Mr. <span
+                            th:text="${user.fName}"></span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex align-items-center justify-content-around">
+                        <div class="profile">
+                            <div>
+                                <img width="80px" style="border-radius: 50%;"
+                                    th:src="*{'data:image/jpeg;base64,'+{user.image}}" alt="">
+                            </div>
+                            <!-- <div>
+                        <span class="text-white mt-3" th:text="${user.email}"></span>
+                    </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="border-color: #141b29;">
+                    <span class="text-white mt-3" th:text="${user.email}"></span>
+                    <a class="btn btn-outline-primary text-decoration-none" href="/loginPage">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- button -->
+    <!-- toaste -->
+    <div class="container-fluid d-con" style="height:450px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 text-white mt-5">
+                    <h1 class="vis">World’s #1 <br>Online Bootcamp</h1>
+                    <h5 class="mt-3 vis" style="color: white;">Admin Can Control This Site</h5>
+                    <h5 class="mt-3 vis" style="color: white;">This Page Having Lot of Responsibility</h5>
+                    <h5 class="mt-3 vis" style="color: white;">Be Carefull save Data From Unkown</h5>
+
+                    <div class="mt-5 row col-md-12">
+                        <div class="col-md-6 col-sm-12">
+                            <a href="">
+                                <img width="100px"
+                                    src="https://o.remove.bg/downloads/433f4656-b951-411a-a6da-90435a745c9c/image-removebg-preview.png"
+                                    alt="">
+                            </a>
+                            <!-- <button class="btn btn-outline-success my-2
+                                    my-sm-0
+                                    text-white rounded-fill" style="background-color:#ea6400;
+                                    width:120px">
+                                <h5>Status1</h5>
+                            </button> -->
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="guaranteed">100% Facilities for
+                                Placement</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 mt-5 p-4 rounded" style="background-color: #000000; border-radius: 40%;">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/bSsnjFzaNK8"
+                            title="YouTube video player" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- <section class="container-fluid"
+            style="background-image: url('https://www.shutterstock.com/image-photo/radcliffe-quadrangle-the-quad-harvard-260nw-396023383.jpg'); background-size: cover;">
+            <div class="overlay text-white pt-3" style="background-color: rgba(0, 0, 0, .8);">
+
+                <div class="container-fluid py-4">
+                    <div class="row row-cols-1 row-cols-md-3 g-4 py-4">
+                        <div class="col">
+                            <div class="card border-0 h-100 bg-transparent">
+                                <div class="card-body text-center">
+                                    <div class="row g-2 ">
+                                        <div class="col-12">
+                                            <div class="card text-white bg-transparent text-center pt-2 border-2 border-bottom-0 border-start-0 border-top-0 border-white"
+                                                style="border-radius: 0%;">
+                                                <p style="font-size: 1.5rem;font-weight: 600;line-height: 0.8;">
+                                                    @Team_Shubham <br>
+                                                    <small class=" font-weight-lighter"
+                                                        style="font-size: 1rem;">Motihari,Bihar</small>
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col d-flex justify-content-center align-items-center">
+                            <div class="card h-100  bg-transparent text-white">
+                                <h3 style="font-weight: 500;">Developer Address</h3>
+                                <div style="line-height: 1.4;">
+                                    <p style="font-size: 1.2rem;">Chandmari, Motihari, East champaran, <br> Bihar 845401
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col d-flex justify-content-center align-items-center">
+                            <div class="card h-100 bg-transparent border-0 text-white">
+                                <h3 style="font-weight: 500;">Get in Touch With Us</h3>
+                                <div class="pt-2" style="line-height: 0.9;">
+                                    <a>
+                                        <small style="font-size: 1rem"><i class="fa fa-envelope text-white"></i>&nbsp;
+                                            codecprogramming@gmail.com</small>
+                                        <div class="col-md-12 mt-5 col-sm-6 d-flex">
+                                            <div class="col-md-3 col-sm-6">
+                                                <a href="https://www.facebook.com/shubham.shrivastwa.16">
+                                                    <i class="fa fa-facebook text-white-50"></i>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-md-3 col-sm-6 ">
+                                                <a href="https://www.linkedin.com/in/shubham-shrivastwa-8913a9229/">
+                                                    <i class="fa fa-linkedin text-white-50"></i>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 col-sm-6">
+                                                <a href="https://www.instagram.com/ks_shubham31/">
+                                                    <i class="fa fa-instagram text-white-50"></i>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 col-sm-6">
+                                                <a href="https://twitter.com/TeamShubham_">
+                                                    <i class="fa fa-twitter text-white-50"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h6 class="text-center py-4">© Copyright 2023. All Rights Reserved by Parul University.</h6>
+                    <div class="mt-5 text-center">
+                        <img style="width: 100px;" src="https://qr-codes-svg.s3.amazonaws.com/ObxrjR.svg?1680623393719"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+        </section> -->
+    </div>
+    <script src="programm.js"></script>
+</body>
+
+</html>
