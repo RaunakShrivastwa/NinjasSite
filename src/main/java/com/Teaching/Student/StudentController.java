@@ -8,6 +8,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +21,7 @@ import com.Teaching.Student.StudentService;
 
 
 @Controller
+@CrossOrigin(origins = "http://localhost:3000")
 public class StudentController {
 
     @Autowired
@@ -62,7 +64,7 @@ public class StudentController {
         user.setNumber(number);
         user.setPassword(encode);
         user.setWeight(weight);
-        user.setRole("ROLE_ADMIN");
+        user.setRole("ROLE_NORMAL");
         user.setLName(lName);
 
 
@@ -85,6 +87,6 @@ public class StudentController {
         return "redirect:/register";
     }
 
-
+  
     
 }

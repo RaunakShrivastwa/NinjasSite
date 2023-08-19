@@ -18,4 +18,8 @@ public class Pay {
     private String number;
     private String amount;
     private String status;
+    private String day;
+    private String month;
+    private String year;
+    private String medium;
 }

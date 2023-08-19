@@ -24,15 +24,14 @@ const paymentStart = () => {
                         "currency": "INR",
                         "name": "Teaching Institute",
                         "description": "Test Transaction",
-                        "image": "https://example.com/your_logo",
+                        "image": "AbhijeetImage.jpg",
                         "order_id": response.id,
                         "handler": function (response) {
-                            alert("Payment successfully happened");
-                            //updatePaymentData(response.razorpay_payment_id);
+                            updatePaymentData(response.razorpay_payment_id);
                             window.location.href="/javaContent1"
                         },
                         "prefill": {
-                            "contact": ""
+                            "contact": "9508840645"
                         },
                         "notes": {
                             "address": "Razorpay Corporate Office"
@@ -41,34 +40,30 @@ const paymentStart = () => {
                             "color": "#3399cc"
                         }
                     };
-                let razor = new Razorpay(pay);
-                razor.on('payment.failed', function (response){
-                        alert("payment unsuccessfully");
-                      
-
-                });
-                razor.open();
+                    let razor = new Razorpay(pay);
+                    razor.on('payment.failed', function (response){
+                            alert("payment unsuccessfully");
+                    });
+                    razor.open();
                 }
             },
             error: function (error) {
-                alert("something went wrong !!")
+                alert("something payment went wrong !!")
             }
         }
     )
 };
 
-function updatePaymentData(payment_id) {
+function updatePaymentData(payment_id,order_id) {
     $.ajax({
-        url: "/updatePayment",
+        url: "/savePayment",
         data: JSON.stringify({payment_id : payment_id}),
         contentType: 'application/json',
         type: 'POST',
         dataType: 'json',
         success: function (response) {
-            alert("something went good !!")
         },
         error: function (error) {
-            alert("something went wrong !!")
         }
     })
 };

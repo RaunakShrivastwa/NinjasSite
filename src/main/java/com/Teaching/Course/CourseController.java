@@ -26,6 +26,9 @@ public class CourseController {
     private CourseRepositery repositery;
 
     @Autowired
+    private StudentRepositery studentRepo;
+
+    @Autowired
     private StudentRepositery repositery1;
 
     @PostMapping("/course")
@@ -42,5 +45,10 @@ public class CourseController {
     @GetMapping("/getSingle/{id}")
     public Student getStudentOne(@PathVariable String id){
         return this.repositery1.findById(id).get();
+    }
+
+    @GetMapping("/getStudent/single/{id}")
+    public Student getStudent(@PathVariable String id){
+        return this.studentRepo.findById(id).get();
     }
 }

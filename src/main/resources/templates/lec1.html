@@ -58,7 +58,7 @@
     </style>
 </head>
 
-<body >
+<body>
     <div class="container-fluid m-0 p-0" style="background-color: black;">
         <!-- course heading 1 -->
         <div class="container p-3 big-head" style="height:auto;display: none;
@@ -121,9 +121,11 @@
                 </a>
                 <div class="d-flex justify-content-around ml-3 align-items-center text-center"
                     style="width: 100%; background-color: #2a2747;">
-                    <h5 class="p-1 text-white"><span style="font-size: large;" class="title font-weight-bold" th:text="${link.content}"></span>
+                    <h5 class="p-1 text-white"><span style="font-size: large;" class="title font-weight-bold"
+                            th:text="${link.content}"></span>
                         <br>
-                        <span style="font-size: small;" class="mt-2 title">Lecture :-</span> <span style="font-size: small;" th:text="${topic.id}"></span>
+                        <span style="font-size: small;" class="mt-2 title">Lecture :-</span> <span
+                            style="font-size: small;" th:text="${topic.id}"></span>
                     </h5>
                 </div>
             </div>
@@ -189,65 +191,44 @@
                                 rgb(110, 106,
                                 106);">
 
-                            <div  class="container" style="box-shadow: 1px
+                            <div class="container" style="box-shadow: 1px
                                     0px 8px 0px
                                     rgb(110, 106,
                                     106); border-radius: 5px; border: 20px solid
                                     #453f69;border-right:
                                     0;border-top: 0;border-bottom:
                                     0;border-left:30; background-color: white;">
-                                <div  class="col-md-12 col-sm-12 text-center
+                                <div class="col-md-12 col-sm-12 text-center
                                         row p-2 mt-4
                                         align-items-center
                                         justify-content-around d-flex">
-                                    <div class="col-md-6 col-sm-12" >
+                                    <div class="col-md-6 col-sm-12">
 
                                         <p class="heading " style="font-size:20px;"><a style="color: black;
                                             text-decoration: none;" title="Computer fundame"
-                                        th:href="@{/dash/{userId}(userId=${user.id})}">
-                                        <p th:if="${user.id != topic.id}">
-                                            <img width="16px"
-                                                src="data:image/svg+xml,%3Csvg%20fill%3D%22%23000000%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M8%205v14l11-7z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E"
-                                                alt="">
-                                            <span style="font-size: larger;" th:text="${user.subTopic}">
-                                            </span>
-                                        </p>
-
-                                        <p th:if="${user.id == topic.id}">
-                                            <img width="16px"
-                                                src="data:image/svg+xml,%3Csvg%20fill%3D%22%23000000%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M6%2019h4V5H6v14zm8-14v14h4V5h-4z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E"
-                                                alt="">
-                                            <span th:text="${user.subTopic}"
-                                                style="color: rgb(98, 255, 0);font-size: larger;">
-                                            </span>
-                                        </p>
-
-
-                                    </a>
-                                </p>
-                                        <!-- <p class="heading " style="font-size:20px;"><a style="color: black;
-                                                    text-decoration: none;" title="Computer fundame"
                                                 th:href="@{/dash/{userId}(userId=${user.id})}">
-                                                <span th:text="${user.subTopic}"
-                                                style="color: rgb(98, 255, 0);font-size: larger;">
-                                            </span> -->
-                                                <!-- <p th:if="${user.id != link.id}">
+                                                <p th:if="${user.id != topic.id}">
                                                     <img width="16px"
                                                         src="data:image/svg+xml,%3Csvg%20fill%3D%22%23000000%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M8%205v14l11-7z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E"
                                                         alt="">
-                                                    <span style="font-size: larger;" th:text="${user.content}">
+                                                    <span style="font-size: larger;" th:text="${user.subTopic}">
                                                     </span>
                                                 </p>
 
-                                                <p th:if="${user.id == link.id}">
+                                                <p th:if="${user.id == topic.id}">
                                                     <img width="16px"
                                                         src="data:image/svg+xml,%3Csvg%20fill%3D%22%23000000%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M6%2019h4V5H6v14zm8-14v14h4V5h-4z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E"
                                                         alt="">
-                                                   
-                                                </p> -->
+                                                    <span th:text="${user.subTopic}"
+                                                        style="color: rgb(98, 255, 0);font-size: larger;">
+                                                    </span>
+                                                </p>
 
 
                                             </a>
+                                        </p>
+
+                                        </a>
                                         </p>
 
                                     </div>
@@ -276,9 +257,9 @@
                             <div class="embed-responsive
                                     embed-responsive-16by9">
 
-                                    <video controls type="video/mp4">
-                                        <source th:src="@{${topic.video}}"/>
-                                    </video>
+                                <video controls type="video/mp4">
+                                    <source th:src="@{${topic.video}}" />
+                                </video>
 
                                 <iframe class="embed-responsive-item p-1
                                         vdo" style="height: 100%" th:src="@{${topic.video}}" allowfullscreen></iframe>
@@ -297,7 +278,17 @@
                         </div>
                     </a>
 
-                    <button class="btn btn-danger mark"><small>MARK AS WATCHED</small></button>
+
+
+                    <form th:action="@{/cheakData/{userId2}(userId2=${topic.id})}" method="post">
+                        <p th:if="${cheak1.flag == flagnull}">
+                            <button type="button" class="btn btn-primary mark"><small>Watched</small></button>
+                        </p>
+
+                        <p th:if="${cheak1.flag != flagnull}">
+                            <button id="mark" class="btn btn-danger mark"><small>Mark As Read</small></button>
+                        </p>
+                    </form>
 
                     <a th:href="@{/Incr/{userId2}(userId2=${topic.id})}">
                         <div class="row ml-4">
@@ -318,6 +309,14 @@
 
         </div>
     </div>
+   <script>
+    const markBtn=document.getElementById('mark');
+    const read=document.getElementById('mark1');
+       markBtn.addEventListener("click",function(){
+           markBtn.style='display:none'
+           read.style='display:block'
+       })
+   </script>
 </body>
 
 </html>
