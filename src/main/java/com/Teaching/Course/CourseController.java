@@ -3,9 +3,11 @@
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -43,12 +45,28 @@ public class CourseController {
     }
 
     @GetMapping("/getSingle/{id}")
-    public Student getStudentOne(@PathVariable String id){
-        return this.repositery1.findById(id).get();
+    public Course getStudentOne(@PathVariable Long id){
+        return this.repositery.findById(id).get();
     }
 
-    @GetMapping("/getStudent/single/{id}")
+    @GetMapping("/getStudentData/{id}")
     public Student getStudent(@PathVariable String id){
         return this.studentRepo.findById(id).get();
     }
+
+    @DeleteMapping("/deleteCourse/{id}")
+    public void deleteData(@PathVariable Long id){
+        this.repositery.deleteById(id);
+    }
+
+    @PutMapping("/updateCourse/{id}")
+    public Course updateCourse(@PathVariable Long id, @RequestBody Course course){
+        Course course1 = this.repositery.findById(id).get();
+        course1.setName(course.getName());
+        course1.setTitle(course.getTitle()); // This line should be course.getTitle()
+        course1.setDeadline(course.getDeadline());
+        course1.setScore(course.getScore());
+        return this.repositery.save(course1);
+    }
+    
 }
