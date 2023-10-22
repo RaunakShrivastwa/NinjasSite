@@ -63,9 +63,7 @@ public class controller {
        model.addAttribute("user",student);
        model.addAttribute("log",email);
     //    System.out.println(email);
-
-
-       return "/home";
+       return "home";
     }
 
     @GetMapping("/about")
