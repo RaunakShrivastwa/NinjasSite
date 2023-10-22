@@ -41,7 +41,8 @@
                                                 </div>
                                                 <div class="col-sm-8">
                                                     <h5>Full Stack web development</h5>
-                                                    <p>Learn complete web stack programming with React and Node by doing it the way a full-stack</p>
+                                                    <p>Learn complete web stack programming with React and Node by doing
+                                                        it the way a full-stack</p>
                                                 </div>
                                             </div>
                                         </td>
@@ -53,7 +54,8 @@
                     </div>
 
                     <div class="col-md-4">
-                        <div class="card px-3 py-4 border-0 my-2" style="background-color: #F1EFFF; border-radius: 10px;">
+                        <div class="card px-3 py-4 border-0 my-2"
+                            style="background-color: #F1EFFF; border-radius: 10px;">
                             <div class="text-dark font-weight-bold border border-2 border-top-0 border-left-0 border-right-0 px-2 pb-2"
                                 style="font-size: large; border-color: #B7B7B7;">Bill Summary</div>
 
@@ -68,7 +70,8 @@
                                 </tr>
                                 <tr class="border-0">
                                     <th scope="row" class="border-0">Total</th>
-                                    <th class="border-0">&#X20B9; <input type="text" id="amount" value="3500" readonly class="w-50 bg-transparent border-0" style="outline: none;"></th>
+                                    <th class="border-0">&#X20B9; <input type="text" id="amount" value="3500" readonly
+                                            class="w-50 bg-transparent border-0" style="outline: none;"></th>
                                 </tr>
                             </table>
 
@@ -87,7 +90,75 @@
         </div>
     </div>
 
-    <script src="Payment.js"></script>
+    <script>
+        const paymentStart = () => {
+            var value = document.getElementById("amount").value;
+            console.log("value = " + value);
+
+            if (value == "" || value == null) {
+                alert("pls enter amount ... ");
+                return;
+            }
+
+            $.ajax(
+                {
+                    url: "/create_order",
+                    data: JSON.stringify({ amount: value, info: 'order_request' }),
+                    contentType: 'application/json',
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function (response) {
+                        console.log(response)
+                        if (response.status == "created") {
+                            let pay = {
+                                "key": "rzp_test_GHH9Q147mq0G9x",
+                                "amount": response.amount,
+                                "currency": "INR",
+                                "name": "Teaching Institute",
+                                "description": "Test Transaction",
+                                "order_id": response.id,
+                                "handler": function (response) {
+                                    updatePaymentData(response.razorpay_payment_id);
+                                    window.location.href = "/javaContent1"
+                                },
+                                "prefill": {
+                                    "contact": "9508840645"
+                                },
+                                "notes": {
+                                    "address": "Razorpay Corporate Office"
+                                },
+                                "theme": {
+                                    "color": "#3399cc"
+                                }
+                            };
+                            let razor = new Razorpay(pay);
+                            razor.on('payment.failed', function (response) {
+                                alert("payment unsuccessfully");
+                            });
+                            razor.open();
+                        }
+                    },
+                    error: function (error) {
+                        alert("something payment went wrong !!")
+                    }
+                }
+            )
+        };
+
+        function updatePaymentData(payment_id, order_id) {
+            $.ajax({
+                url: "/savePayment",
+                data: JSON.stringify({ payment_id: payment_id }),
+                contentType: 'application/json',
+                type: 'POST',
+                dataType: 'json',
+                success: function (response) {
+                },
+                error: function (error) {
+                }
+            })
+        };
+    </script>
 </body>
 
 </html>
