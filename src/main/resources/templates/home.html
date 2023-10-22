@@ -287,9 +287,10 @@
 
 
                   <div th:each="user:${user}" data-target="#staticBackdrop" data-toggle="modal">
-                    <img  style="border-radius: 60%;width: 40px;" th:src="*{'data:image/jpeg;base64,'+{user.image}}" alt="">
+                    <span class="text-white shadow mr-2" style="font-weight: 100;" th:text="${user.fName}"></span><img  style="border-radius: 60%;width: 40px;" th:src="*{'data:image/jpeg;base64,'+{user.image}}" alt="">
 
                   </div>
+                  
 
 
             </form>
