@@ -68,5 +68,10 @@ public class CourseController {
         course1.setScore(course.getScore());
         return this.repositery.save(course1);
     }
+
+    @GetMapping("/myData")
+    public String m1(){
+        return "This is home";
+    }
     
 }
