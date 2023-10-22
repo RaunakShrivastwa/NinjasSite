@@ -65,7 +65,7 @@ public class controller {
     //    System.out.println(email);
 
 
-       return "/HomePage/home";
+       return "/home";
     }
 
     @GetMapping("/about")
