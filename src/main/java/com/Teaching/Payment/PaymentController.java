@@ -16,7 +16,7 @@ import com.Teaching.Notification.Notification;
 import com.Teaching.Notification.NotificationRepository;
 import com.razorpay.*;
 
-@CrossOrigin(origins = "http://localhost:3000")
+// @CrossOrigin(origins = "http://localhost:3000")
 @Controller
 public class PaymentController {
     @Autowired
