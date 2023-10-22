@@ -203,4 +203,9 @@ public class controller {
        }
 
     }
+
+    @GetMapping("/call")
+    public String pageCall(){
+        return "cheakPage";
+    }
 }
