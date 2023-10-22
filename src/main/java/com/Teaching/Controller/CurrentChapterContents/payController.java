@@ -9,6 +9,6 @@ public class payController {
 
     @GetMapping("/payjava")
     public String payJava(){
-        return "/JavaCourseDataContent/payJava";
+        return "payJava";
     }
 }

@@ -68,52 +68,52 @@ public class controller {
 
     @GetMapping("/about")
     public String About(){
-        return "/About/about";
+        return "about";
     } 
 
     @GetMapping("/bca")
     public String Bca(){
-        return "/SpecialCertificatesCourse/bca";
+        return "bca";
     }
 
    @GetMapping("/mca")
     public String Mca(){
-        return "/SpecialCertificatesCourse/mca";
+        return "mca";
     }
 
     @GetMapping("/java")
     public String javaContent(Model model){
         List<Course> courses=this.courseService.allCourse();
         model.addAttribute("course", courses);
-        return "/Course/java";
+        return "java";
     }
 
     @GetMapping("/c")
     public String c(){
-        return "/Course/c";
+        return "c";
     }
 
    @GetMapping("/c++")
     public String c1(){
-        return "/Course/c++";
+        return "c++";
     }
 
     
     @GetMapping("/dataScience")
     public String dataScience(){
-        return "/Course/dataScience";
+        return "dataScience";
     }
 
     
     @GetMapping("/dsa")
     public String dsa(){
-        return "/Course/dsa";
+        return "dsa";
     }
 
     
     @GetMapping("/javaBackend")
     public String javaBackend(){
-        return "/JavaCourseDataContent/JavaAllContent/javaBackend";
+        return "javaBackend";
     }
 
    
@@ -124,40 +124,40 @@ public class controller {
 
    @GetMapping("/web")
     public String web(){
-        return "/Course/web";
+        return "web";
     }
 
    @GetMapping("/loginPage")
     public String DoLogin(){
-        return "/Login/login";
+        return "login";
     }
 
     @GetMapping("/register")
     public String Registration(Model model){
         model.addAttribute("Student",new Student());
-        return "/Registration/register";
+        return "register";
     }
 
    
     @PostMapping("/postData")
     public String postData(){
         
-        return "redirect:/Registration/register";
+        return "register";
     }
 
     @GetMapping("/access")
     public String Denie(){
-        return "/Acess/denied";
+        return "denied";
     }
 
     @GetMapping("/mobile")
     public String mobile(){
-        return "/Mobile/mobile";
+        return "mobile";
     }
 
     @GetMapping("/lab")
     public String lab(){
-        return "/labs/lab";
+        return "lab";
     }
 
      @GetMapping("/AdminPage")
@@ -184,7 +184,7 @@ public class controller {
        Student student = repositery.findByEmail(email);
        model.addAttribute("user",student);
        model.addAttribute("log",email);
-       return "/AdminPage/admin";
+       return "admin";
     }
 
     @GetMapping("/cheakPage")

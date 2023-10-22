@@ -15,7 +15,7 @@ public class DController {
 
     @GetMapping("/DetailPage")
     public String DetailPage(){
-       return "/DetailsPage/DetailPage";
+       return "DetailPage";
     }
 
     @GetMapping("/saveDetalsData")

@@ -18,6 +18,6 @@ public class JavaHome {
     public String CourseContent(Model model){
         List<Course> courses=this.courseService.allCourse();
         model.addAttribute("course", courses);
-        return "/JavaCourseDataContent/Course";
+        return "Course";
     }
 }

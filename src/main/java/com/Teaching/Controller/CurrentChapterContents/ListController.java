@@ -34,6 +34,6 @@ public class ListController {
         }).collect(Collectors.toList());
         model.addAttribute("userList",userList);
         model.addAttribute("name", name);
-        return "/JavaCourseDataContent/listData";
+        return "listData";
     }
 }
