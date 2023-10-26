@@ -167,7 +167,7 @@ public class controller {
       Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
        String email = authentication.getName();
        Student student = repositery.findByEmail(email);
-    response.sendRedirect("http://localhost:3000/"+student.getId());
+    response.sendRedirect("https://webpage-t225.onrender.com/"+student.getId());
   }
 
 
