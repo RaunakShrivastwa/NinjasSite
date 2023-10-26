@@ -3,6 +3,7 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -10,6 +11,7 @@ import com.Teaching.StudentEnquire.StudentEnqiure;
 import com.Teaching.StudentEnquire.StudentEnqiureService;
 
 @Controller
+@CrossOrigin(origins = "*")
 public class StudentEnqiureController {
 
    @Autowired

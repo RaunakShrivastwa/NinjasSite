@@ -21,7 +21,7 @@ import com.Teaching.Student.StudentService;
 
 
 @Controller
-// @CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 public class StudentController {
 
     @Autowired
