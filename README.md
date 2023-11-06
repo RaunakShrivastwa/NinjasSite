@@ -1,4 +1,4 @@
-# Teaching Website - Spring Boot and React
+# EduHub - Spring Boot and React
 
 Welcome to the Teaching Website project! This is a platform for online education, where students can enroll in various courses and access a secure dashboard for their educational journey.
 
