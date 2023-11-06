@@ -34,6 +34,8 @@ The Teaching Website is a full-stack web application built using Spring Boot for
 - Razorpay
 - Spring Security
 - Devtools
+- Thymeleaf
+- Lombok
 
 ## Getting Started
 
