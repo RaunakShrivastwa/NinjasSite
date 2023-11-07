@@ -2,6 +2,12 @@
 
 Welcome to the Teaching Website project! This is a platform for online education, where students can enroll in various courses and access a secure dashboard for their educational journey.
 
+Project Video
+
+https://github.com/RaunakShrivastwa/NinjasSite/assets/121729066/9c8e580e-9b2c-40e1-abe3-603458cb1a6f
+
+
+
 ## Table of Contents
 
 - [Introduction](#introduction)
